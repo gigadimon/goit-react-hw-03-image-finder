@@ -49,7 +49,7 @@ class App extends Component {
     }
 
     /* Увед при первой успешной загрузке */
-    if (prevState.totalHits === 0 && prevState.totalHits !== totalHits) {
+    if (prevState.totalHits !== totalHits && totalHits !== 0) {
       Notify.success(`Найдено ${totalHits} картинок`);
     }
 
