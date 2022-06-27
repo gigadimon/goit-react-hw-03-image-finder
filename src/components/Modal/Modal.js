@@ -3,6 +3,12 @@ import { Component } from 'react';
 import s from './Modal.module.css';
 
 export default class Modal extends Component {
+  static propTypes = {
+    hits: PropTypes.array.isRequired,
+    modalId: PropTypes.string.isRequired,
+    closeModal: PropTypes.func.isRequired,
+  };
+
   componentDidMount() {
     window.addEventListener('keydown', this.closeModal);
   }
@@ -36,9 +42,3 @@ export default class Modal extends Component {
     );
   }
 }
-
-Modal.propTypes = {
-  hits: PropTypes.array.isRequired,
-  modalId: PropTypes.string.isRequired,
-  closeModal: PropTypes.func.isRequired,
-};
